@@ -17,22 +17,19 @@ DolarAEuros   =  data2['rates']['USD']
 
 #data2['rates']['ARS']
 
-print(BitcoinADolar)
-print(DolarAEuros)
-print(DolarAPesos)
-
-
-BitcoinAPesos = subprocess.call(["./a.out", str(BitcoinADolar) , str(DolarAPesos)])
 print("EL precio del Bitcoin en pesos: ")
-print(BitcoinAPesos)
+BitcoinAPesos = subprocess.run(["./ejecutable", str(BitcoinADolar) , str(DolarAPesos)], capture_output = True)
+
+print(float(BitcoinAPesos.stdout))
 
 
 print("EL precio del Bitcoin en dolares:")
 print(BitcoinADolar)
 
-BitcoinAEuros = subprocess.call(["./a.out", str(BitcoinADolar) , str(DolarAEuros)])
 print("EL precio del Bitcoin en euros: ")
-print(BitcoinAEuros)
+BitcoinAEuros = subprocess.run(["./ejecutable", str(BitcoinADolar) , str(DolarAEuros)], capture_output = True)
+
+print(float(BitcoinAEuros.stdout))
 
 
 

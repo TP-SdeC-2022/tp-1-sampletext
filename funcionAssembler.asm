@@ -1,13 +1,19 @@
 
+segment .data
+
+segment .bss
+
 segment .text
     global calc
 
 calc:
 
-    enter 0,0
-    mov eax, [ebp+8]       ;almacenamos en ebx el bitcoin en dolares      
-    mul DWORD [ebp+12]     ;multiplicamos por la tasa 
+    push ebp
+    mov ebp,esp
 
-  
-    leave
+    mov eax, [ebp+8]       ;almacenamos en ebx el bitcoin en dolares  
+    mov edx, [ebp+12]    
+    mul edx     ;multiplicamos por la tasa 
+
+    pop ebp
     ret
