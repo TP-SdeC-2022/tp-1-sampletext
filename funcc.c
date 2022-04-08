@@ -16,5 +16,5 @@ int BAMonedaDeseada = calc(BAdolar, cotizacion);
 printf("%d\n",BAMonedaDeseada);
 
 
-return BAMonedaDeseada;
+return 0;
 }
